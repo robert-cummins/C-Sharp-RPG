@@ -75,6 +75,34 @@
             </Border>
         </Grid>        
         <Label Grid.Row="2" Grid.Column="0" Content="Inventory/Quests" Background="BurlyWood"></Label>
-        <Label Grid.Row="2" Grid.Column="1" Content="Combat/Movement Controls" Background="Lavender"></Label>
+       
+        <Grid Grid.Row="2" Grid.Column="1" Background="Lavender">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="255"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="1" Content="North"></Button>
+                <Button Grid.Row="1" Grid.Column="0" Content="West"></Button>
+                <Button Grid.Row="1" Grid.Column="2" Content="East"></Button>
+                <Button Grid.Row="2" Grid.Column="1" Content="South"></Button>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
