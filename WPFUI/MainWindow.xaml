@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         FontSize="11pt"
         Title="Robs Game" Height="768" Width="1024">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"></BooleanToVisibilityConverter>
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -98,10 +103,10 @@
                     <ColumnDefinition Width="*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Button Click="OnClick_MoveNorth" Height="25" Width="65" Margin="10" Grid.Row="0" Grid.Column="1" Content="North"></Button>
-                <Button Click="OnClick_MoveWest" Height="25" Width="65" Margin="10"  Grid.Row="1" Grid.Column="0" Content="West"></Button>
-                <Button Click="OnClick_MoveEast" Height="25" Width="65" Margin="10"  Grid.Row="1" Grid.Column="2" Content="East"></Button>
-                <Button Click="OnClick_MoveSouth" Height="25" Width="65" Margin="10"  Grid.Row="2" Grid.Column="1" Content="South"></Button>
+                <Button Visibility="{Binding HasLocationToNorth, Converter={StaticResource BooleanToVisibility}}" Click="OnClick_MoveNorth" Height="25" Width="65" Margin="10" Grid.Row="0" Grid.Column="1" Content="North"></Button>
+                <Button Visibility="{Binding HasLocationToWest, Converter={StaticResource BooleanToVisibility}}" Click="OnClick_MoveWest" Height="25" Width="65" Margin="10"  Grid.Row="1" Grid.Column="0" Content="West"></Button>
+                <Button Visibility="{Binding HasLocationToEast, Converter={StaticResource BooleanToVisibility}}" Click="OnClick_MoveEast" Height="25" Width="65" Margin="10"  Grid.Row="1" Grid.Column="2" Content="East"></Button>
+                <Button Visibility="{Binding HasLocationToSouth, Converter={StaticResource BooleanToVisibility}}" Click="OnClick_MoveSouth" Height="25" Width="65" Margin="10"  Grid.Row="2" Grid.Column="1" Content="South"></Button>
             </Grid>
         </Grid>
     </Grid>
