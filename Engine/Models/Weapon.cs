@@ -21,4 +21,5 @@ namespace Engine.Models
         {
             return new Weapon(ItemTypeID, Name, Price, MinimumDamage, MaximumDamage);
         }
+    }
 }
