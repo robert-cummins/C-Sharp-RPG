@@ -7,7 +7,7 @@ using System.Collections.ObjectModel;
 
 namespace Engine.Models
 {
-    class Monster : BaseNotificationClass
+    public class Monster : BaseNotificationClass
     {
         private int _hitpoints;
 
