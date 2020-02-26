@@ -139,6 +139,25 @@ namespace Engine.ViewModels
                 if(!CurrentPlayer.Quests.Any(q => q.PlayerQuest.ID == quest.ID))
                 {
                     CurrentPlayer.Quests.Add(new QuestStatus(quest));
+                    RaiseMessage("");
+                    RaiseMessage($"You recieve the '{quest.Name}' quest:");
+                    RaiseMessage($"{quest.Description}");
+
+                    RaiseMessage("");
+                    RaiseMessage("Return with: ");
+                    foreach(ItemQuantity itemQuantity in quest.ItemsToComplete)
+                    {
+                        RaiseMessage($"{itemQuantity.Quantity} {ItemFactory.CreateGameItem(itemQuantity.ItemID).Name}");
+                    }
+
+                    RaiseMessage("");
+                    RaiseMessage("And you will recieve:");
+                    RaiseMessage($" {quest.RewardExperiencePoints} experience points");
+                    RaiseMessage($" {quest.RewardGold} gold");
+                    foreach(ItemQuantity itemQuantity in quest.RewardItems)
+                    {
+                        RaiseMessage($" {itemQuantity.Quantity} {ItemFactory.CreateGameItem(itemQuantity.ItemID).Name}");
+                    }
                 }
             }
         }
