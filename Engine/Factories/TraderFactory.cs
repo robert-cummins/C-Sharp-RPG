@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Engine.Models;
 
 namespace Engine.Factories
@@ -17,10 +15,10 @@ namespace Engine.Factories
             susan.AddItemToInventory(ItemFactory.CreateGameItem(1001));
 
             Trader farmerTed = new Trader("Farmer Ted");
-            susan.AddItemToInventory(ItemFactory.CreateGameItem(1001));
+            farmerTed.AddItemToInventory(ItemFactory.CreateGameItem(1001));
 
-            Trader peteTheHerbalist = new Trader("Pete the HErbalist");
-            susan.AddItemToInventory(ItemFactory.CreateGameItem(1001));
+            Trader peteTheHerbalist = new Trader("Pete the Herbalist");
+            peteTheHerbalist.AddItemToInventory(ItemFactory.CreateGameItem(1001));
 
             AddTraderToList(susan);
             AddTraderToList(farmerTed);
@@ -34,7 +32,7 @@ namespace Engine.Factories
 
         private static void AddTraderToList(Trader trader)
         {
-            if(_traders.Any(t => t.Name == trader.Name))
+            if (_traders.Any(t => t.Name == trader.Name))
             {
                 throw new ArgumentException($"There is already a trader named '{trader.Name}'");
             }
@@ -43,3 +41,4 @@ namespace Engine.Factories
         }
     }
 }
+

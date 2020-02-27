@@ -229,7 +229,7 @@
                           ItemsSource="{Binding CurrentPlayer.Weapons}"
                           SelectedItem="{Binding CurrentWeapon}"
                           DisplayMemberPath="Name"
-                          SelectedValuePath="ItemTypeID"/>
+                          SelectedValuePath="ID"/>
 
                 <Button Grid.Row="0" Grid.Column="2"
                         Content="Use"
@@ -261,8 +261,9 @@
                         Click="OnClick_MoveWest"
                         Visibility="{Binding HasLocationToWest, Converter={StaticResource BooleanToVisibility}}"
                         Content="West"/>
-                <Button Grid.Row="1" Grid.Column="1"
-                        Height="25" Width="65" Margin="10"
+                <Button Grid.Row="1" Grid.Column="1" 
+                        Height="25" Width="65" Margin="10" 
+                        Click="OnClick_DisplayTradeScreen"
                         Visibility="{Binding HasTrader, Converter={StaticResource BooleanToVisibility}}"
                         Content="Trade"/>
                 <Button Grid.Row="1" Grid.Column="2" 
